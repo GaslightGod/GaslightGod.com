@@ -1,0 +1,29 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: #B0B0B0; /* Grey text color */
+    margin: 0;
+    padding: 0;
+}
+
+#terminal {
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.input-line {
+    display: flex;
+}
+
+.prompt {
+    color: #B0B0B0; /* Grey prompt */
+}
+
+.user-input {
+    color: #ffffff;
+    outline: none;
+    background-color: black;
+    border: none;
+    width: 100%;
+}

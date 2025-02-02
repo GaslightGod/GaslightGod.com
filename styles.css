@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', monospace;
     background-color: black;
-    color: #B0B0B0; /* Grey text color */
+    color: #B0B0B0; 
     margin: 0;
     padding: 0;
 }
@@ -10,6 +10,17 @@ body {
     padding: 20px;
     white-space: pre-wrap;
     word-wrap: break-word;
+    background-color: black; /* Ensure the terminal background matches the body */
+    color: #B0B0B0; /* Ensure the terminal text color matches the body */
+}
+
+.output {
+    color: #B0B0B0; /* Grey text color */
+    font-family: 'Courier New', monospace;
+    background-color: black; /* Ensure the output background matches the terminal */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 16px; /* Adjust the font size of the output text if needed */
 }
 
 .input-line {
@@ -17,13 +28,15 @@ body {
 }
 
 .prompt {
-    color: #B0B0B0; /* Grey prompt */
+    color: #B0B0B0; 
 }
 
 .user-input {
-    color: #ffffff;
+    color: #B0B0B0;
     outline: none;
     background-color: black;
     border: none;
     width: 100%;
+    font-family: 'Courier New', monospace; /* Ensure the input font matches the body */
+    font-size: 16px; /* Increase the font size of the input text */
 }

@@ -1,0 +1,129 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+*{outline: none;}
+
+* {
+  box-sizing: border-box; 
+}
+
+html {
+  background: url() no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: black;
+}
+
+html, body {
+  font-size: 12pt;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  line-height: 180%; 
+  color: white;
+}
+
+div {
+  height: 90%; 
+}
+
+canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1; 
+}
+
+body {
+  background-color: black;
+  font-family:"Ubuntu",monospace;
+  margin:0;
+}
+.linx {
+  left: 1%;
+  top: 1%;
+  width: 22%;
+  position: absolute;
+  overflow: auto;
+  z-index: 2;
+}
+
+
+.main {
+  top: 2%;
+  left: 24%;
+  height: 70%;
+  width: 70%;
+  overflow: auto;
+  position: absolute;
+}
+
+.bottom {
+   bottom: 0%;
+   left: 30%;
+   position: absolute;
+}
+
+.linx a {
+  text-decoration: none;
+  color: white;
+  background-color: transparent;
+  padding: 5px 5px 5px 5px;
+  border-radius: 1px;
+  font-size: 12pt;
+  margin-left: 0px; /* Adjust the value as needed */
+}
+
+.linx a:visited {
+    text-decoration: none;
+}
+
+.linx a:hover {
+    text-decoration: none;
+    color: black;
+    transition: color 0.5s ease, background-color 0.5s ease;
+    background-color: white;
+}
+
+.linx a:active {
+    text-decoration: none;
+}
+
+.p {
+  bottom: 0%;
+  right: 2%;
+  height: 30%;
+  position: absolute;
+}
+
+audio {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.m {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+body {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  animation-delay: 5.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+

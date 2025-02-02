@@ -1,0 +1,95 @@
+@import url(https://web.archive.org/web/20180603152316cs_/http://fonts.googleapis.com/css?family=Ubuntu);
+*{outline: none;}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+        background-color: white;
+        font-size: 2.5vw;
+        font-family: Ubuntu;
+        color: black;
+        overflow: hidden;
+}
+
+.title {
+    position: absolute;
+    top: 2%;
+    left: 0%;
+    font-size: 5vw;
+}
+
+.x {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 1.5vw;
+    word-spacing: 5%;
+}
+
+.space1 {
+    position: absolute;
+    top: 12%;
+    right: 0%;
+    width: 32%;
+}
+
+.bg {
+    position: absolute;
+    top: -16%;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.y {
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    font-size: 1.5vw;
+    word-spacing: 5%;
+}
+
+a:link {
+    text-decoration: none;
+    border-radius: 1px;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    transition: 0.5s ease;
+}
+
+a:active {
+    text-decoration: none;
+}
+.title {
+    position: left;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+}
+@media screen and (max-width: 1000px) {
+    .title, .x, .space1, .bg, .y {
+        position: static;
+        transform: none;
+        top: auto;
+        left: auto;
+        right: auto;
+        width: auto;
+        font-size: 1em;
+    }
+    html {
+        font-size: 16px;
+    }
+}

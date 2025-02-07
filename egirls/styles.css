@@ -1,6 +1,8 @@
 body {
     text-align: center;
     font-size: 3em;
+    animation: slideUpDown 2s infinite;
+    background-color: black;
 }
 
 @keyframes slideUpDown {
@@ -14,7 +16,18 @@ body {
         transform: translateY(0);
     }
 }
+.return a:hover, .return a:focus, .return a:active {
+    color: white;
+    background-color: black;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
 
-body {
-    animation: slideUpDown 2s infinite;
+.return a:visited {
+    color: inherit;
+}
+
+.arrow {
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
 }

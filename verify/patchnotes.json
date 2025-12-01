@@ -1,0 +1,13 @@
+{
+    "version": "1.3",
+    "title": "Version 1.3 Patch Notes",
+    "notes": [
+        "+ Added scalable hunger icon",
+        "+ Added user-controlled icon size in Appearance tab",
+        "+ Improved image resizing and icon rendering",
+        "+ Added online version check and PID authorization",
+        "+ Added smooth graph rendering",
+        "+ Better UI scaling and font handling",
+        "+ Stability fixes and improved hunger sampling"
+    ]
+}

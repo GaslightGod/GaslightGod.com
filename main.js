@@ -1,6 +1,6 @@
-import { commands } from './scripts/commands/commands.js'; 
+import { commands } from './scripts/commands/commands.js';
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     const userInput = document.getElementById("user-input");
     const terminal = document.getElementById("terminal");
     const output = document.getElementById("output");
@@ -8,22 +8,36 @@ document.addEventListener("DOMContentLoaded", function () {
     let commandHistory = [];
     let historyIndex = -1;
 
-    userInput.addEventListener("keydown", function (event) {
+
+    // KEY HANDLING (ENTER / ARROW KEYS)
+    userInput.addEventListener("keydown", async (event) => {
+
+        // --- ENTER KEY ---
         if (event.key === "Enter") {
             event.preventDefault();
-            const inputValue = userInput.value.trim().toLowerCase(); 
-            if (inputValue) {
-                commandHistory.push(inputValue);
+            const rawInput = userInput.value.trim();
+
+            if (rawInput !== "") {
+                commandHistory.push(rawInput);
                 historyIndex = commandHistory.length;
             }
-            processCommand(inputValue);  
-            userInput.value = "";  
-        } else if (event.key === "ArrowUp") {
+
+            await processCommand(rawInput);
+            userInput.value = "";
+            return;
+        }
+
+        // --- ARROW UP ---
+        if (event.key === "ArrowUp") {
             if (historyIndex > 0) {
                 historyIndex--;
                 userInput.value = commandHistory[historyIndex];
             }
-        } else if (event.key === "ArrowDown") {
+            return;
+        }
+
+        // --- ARROW DOWN ---
+        if (event.key === "ArrowDown") {
             if (historyIndex < commandHistory.length - 1) {
                 historyIndex++;
                 userInput.value = commandHistory[historyIndex];
@@ -31,27 +45,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 historyIndex = commandHistory.length;
                 userInput.value = "";
             }
+            return;
         }
     });
 
+
+    // COMMAND PROCESSOR
     async function processCommand(input) {
         const commandOutput = document.createElement("div");
 
-        const args = input.split(" ");
-        const command = args.shift(); 
-        const argString = args.join(" "); 
-
-        const response = commands[command] 
-            ? await commands[command](argString)  
-            : commands.unknown(input);
-
-        if (response === null) {
-            output.textContent = "";  
-        } else {
-            commandOutput.textContent = response;
-            output.appendChild(commandOutput);  
+        if (!input) {
+            commandOutput.textContent = "";
+            output.appendChild(commandOutput);
+            return;
         }
 
-        terminal.scrollTop = terminal.scrollHeight; 
+        // Normalize to lowercase for command lookup
+        const tokens = input.toLowerCase().split(" ");
+        const command = tokens.shift();
+        const argString = tokens.join(" ");
+
+        let response;
+
+        try {
+            if (commands[command]) {
+                response = await commands[command](argString);
+            } else {
+                response = commands.unknown(input);
+            }
+        } catch (err) {
+            response = `Error executing command '${command}': ${err.message}`;
+        }
+
+        // Clear command (returns null)
+        if (response === null) {
+            output.textContent = "";
+        } else {
+            commandOutput.textContent = response;
+            output.appendChild(commandOutput);
+        }
+
+        terminal.scrollTop = terminal.scrollHeight;
     }
 });

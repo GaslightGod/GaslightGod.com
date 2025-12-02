@@ -1,19 +1,19 @@
 export const commands = {
     help: () => {
         return `
---- Available commands: ---
-help - Show available commands
-clear - Clear the terminal
-whois - Show user/system information
-cat <file> - Display the content of a file
-ls - Display files in the current working directory
-open <url> - Open a webpage in a new tab
-main.exe - Loads the main page
+--- Available commands ---
+help            - Show available commands
+clear           - Clear the terminal
+whois           - Show user/system information
+cat <file>      - Display contents of a file
+ls              - List files in the current directory
+open <url>      - Open a webpage in a new tab
+main.exe        - Load the main page
 `;
     },
 
     clear: () => {
-        return null;
+        return null; // Terminal clears in main.js
     },
 
     whois: async () => {
@@ -27,12 +27,26 @@ main.exe - Loads the main page
             const pixelRatio = window.devicePixelRatio || "N/A";
             const connectionType = navigator.connection ? navigator.connection.effectiveType : "N/A";
             const cookiesEnabled = navigator.cookieEnabled ? "Yes" : "No";
-            const localStorageAvailable = typeof(Storage) !== "undefined" ? "Yes" : "No";
-            const batteryStatus = "Battery Status is Not Supported on Desktop";
+            const localStorageAvailable = typeof Storage !== "undefined" ? "Yes" : "No";
+            const batteryStatus = "Not supported on desktop browsers";
             const deviceMemory = navigator.deviceMemory || "N/A";
-
             const ipAddress = await getPublicIP();
-            return formatWhoisOutput(browserInfo, osInfo, userAgent, screenResolution, language, timezone, pixelRatio, connectionType, batteryStatus, deviceMemory, cookiesEnabled, localStorageAvailable, ipAddress);
+
+            return formatWhoisOutput(
+                browserInfo,
+                osInfo,
+                userAgent,
+                screenResolution,
+                language,
+                timezone,
+                pixelRatio,
+                connectionType,
+                batteryStatus,
+                deviceMemory,
+                cookiesEnabled,
+                localStorageAvailable,
+                ipAddress
+            );
         } catch (error) {
             return `Error retrieving WHOIS information: ${error.message}`;
         }
@@ -44,8 +58,7 @@ main.exe - Loads the main page
         try {
             const response = await fetch(`/files/${file}`);
             if (!response.ok) throw new Error(`File '${file}' not found.`);
-            const content = await response.text();
-            return content;
+            return await response.text();
         } catch (error) {
             return `Error: ${error.message}`;
         }
@@ -63,89 +76,88 @@ main.exe - Loads the main page
     },
 
     open: (args) => {
-        if (!args) return "Error: Please specify a URL";
+        if (!args) return "Error: Please specify a URL.";
 
         try {
             const validUrl = args.startsWith("http") ? args : `https://${args}`;
             window.open(validUrl, "_blank");
             return `Opening ${validUrl}...`;
-        } catch (error) {
+        } catch {
             return `Error: Unable to open ${args}`;
         }
     },
 
-'main.exe': () => {
-        const mainUrl = "Main_page/main.html"; 
-        window.location.href = mainUrl; 
+    "main.exe": () => {
+        const mainUrl = "Main_page/main.html";
+        window.location.href = mainUrl;
         return `Redirecting to main page...`;
     },
 
     unknown: (input) => {
         return `Error: Command '${input}' not found.`;
-    },
-
+    }
 };
+// Helper Functions
 
 function getBrowserInfo() {
     const userAgent = navigator.userAgent;
-    let browserName = "Unknown";
-    if (userAgent.indexOf("Firefox") > -1) {
-        browserName = "Mozilla Firefox";
-    } else if (userAgent.indexOf("SamsungBrowser") > -1) {
-        browserName = "Samsung Internet";
-    } else if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
-        browserName = "Opera";
-    } else if (userAgent.indexOf("Trident") > -1) {
-        browserName = "Microsoft Internet Explorer";
-    } else if (userAgent.indexOf("Edge") > -1) {
-        browserName = "Microsoft Edge";
-    } else if (userAgent.indexOf("Chrome") > -1) {
-        browserName = "Google Chrome";
-    } else if (userAgent.indexOf("Safari") > -1) {
-        browserName = "Apple Safari";
-    }
-    return browserName;
+    if (userAgent.includes("Firefox")) return "Mozilla Firefox";
+    if (userAgent.includes("SamsungBrowser")) return "Samsung Internet";
+    if (userAgent.includes("Opera") || userAgent.includes("OPR")) return "Opera";
+    if (userAgent.includes("Trident")) return "Internet Explorer";
+    if (userAgent.includes("Edge")) return "Microsoft Edge";
+    if (userAgent.includes("Chrome")) return "Google Chrome";
+    if (userAgent.includes("Safari")) return "Apple Safari";
+    return "Unknown Browser";
 }
 
 function getOSInfo() {
     const userAgent = navigator.userAgent;
-    let osName = "Unknown";
-    if (userAgent.indexOf("Win") > -1) {
-        osName = "Windows";
-    } else if (userAgent.indexOf("Mac") > -1) {
-        osName = "MacOS";
-    } else if (userAgent.indexOf("X11") > -1) {
-        osName = "UNIX";
-    } else if (userAgent.indexOf("Linux") > -1) {
-        osName = "Linux";
-    }
-    return osName;
+    if (userAgent.includes("Win")) return "Windows";
+    if (userAgent.includes("Mac")) return "MacOS";
+    if (userAgent.includes("X11")) return "UNIX";
+    if (userAgent.includes("Linux")) return "Linux";
+    return "Unknown OS";
 }
 
 async function getPublicIP() {
     try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        return data.ip;
-    } catch (error) {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
+        return data.ip || "Unavailable";
+    } catch {
         return "Unable to retrieve IP address";
     }
 }
 
-function formatWhoisOutput(browserInfo, osInfo, userAgent, screenResolution, language, timezone, pixelRatio, connectionType, batteryStatus, deviceMemory, cookiesEnabled, localStorageAvailable, ipAddress) {
+function formatWhoisOutput(
+    browser,
+    os,
+    userAgent,
+    screenRes,
+    language,
+    timezone,
+    pixelRatio,
+    connection,
+    battery,
+    memory,
+    cookies,
+    storage,
+    ip
+) {
     return `
-        Browser: ${browserInfo}
-        OS: ${osInfo}
-        User Agent: ${userAgent}
-        Screen Resolution: ${screenResolution}
-        Language: ${language}
-        Timezone: ${timezone}
-        Pixel Ratio: ${pixelRatio}
-        Connection Type: ${connectionType}
-        Battery Status: ${batteryStatus}
-        Device Memory: ${deviceMemory}
-        Cookies Enabled: ${cookiesEnabled}
-        Local Storage Available: ${localStorageAvailable}
-        IP Address: ${ipAddress}
-    `;
+Browser: ${browser}
+OS: ${os}
+User Agent: ${userAgent}
+Screen Resolution: ${screenRes}
+Language: ${language}
+Timezone: ${timezone}
+Pixel Ratio: ${pixelRatio}
+Connection Type: ${connection}
+Battery Status: ${battery}
+Device Memory: ${memory}
+Cookies Enabled: ${cookies}
+Local Storage Available: ${storage}
+IP Address: ${ip}
+`;
 }

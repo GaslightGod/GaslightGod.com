@@ -97,8 +97,8 @@ main.exe        - Load the main page
         return `Error: Command '${input}' not found.`;
     }
 };
-// Helper Functions
 
+// Helper functions
 function getBrowserInfo() {
     const userAgent = navigator.userAgent;
     if (userAgent.includes("Firefox")) return "Mozilla Firefox";

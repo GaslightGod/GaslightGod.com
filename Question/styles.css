@@ -1,0 +1,222 @@
+/* Base page style */
+body {
+    background: #000;
+    color: #c1b492;
+    font-family: monospace;
+    text-align: center;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* scrolling info bar */
+#info {
+    position: relative;
+    width: 780px;
+    height: 48px;
+    margin: 40px auto;
+    background: #000;
+    padding: 16px;
+    border: 1px solid #00799e;
+    overflow: hidden;
+    line-height: 1.4;
+    white-space: normal; /* allow wrapping */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#info span {
+    position: absolute;
+    white-space: pre;
+    animation: scroll 22s linear infinite;
+}
+
+#info:hover span {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% { left: 820px; }
+    100% { left: -2400px; }
+}
+
+/* blinking glyphs */
+@keyframes blink {
+    to { visibility: hidden; }
+}
+
+.blink {
+    animation: blink 1200ms steps(2, start) infinite;
+}
+
+/* spacing */
+.space { height: 120px; }
+
+/* warning images */
+.warning {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.w-left {
+    top: 100px;
+    left: 80px;
+}
+
+.w-right {
+    top: 100px;
+    right: 80px;
+}
+
+/* hover reveal fade */
+.reveal {
+    opacity: 0.6;
+    transition: opacity 1s ease-in-out;
+}
+
+.reveal:hover {
+    opacity: 1.0;
+}
+
+/* boxed borders */
+.withborder {
+    border: 1px solid #00799e;
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 40px;
+}
+
+/* list reset */
+.nolist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+#info {
+    background: #000;
+    color: #c1b492;
+    border: 1px solid #00799e;
+    width: 800px;                
+    height: 30px;
+    margin: 40px auto 0 auto;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px #000;
+    padding: 8px 0;
+    position: relative;
+    line-height: 30px;
+    font-size: 14px;
+    letter-spacing: 0.18em;      
+    white-space: nowrap;         
+}
+
+#info span {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;           /* ensures smooth entry from right */
+    animation: infoscroll 32s linear infinite;
+}
+
+#info:hover span {
+    animation-play-state: paused;
+}
+
+@keyframes infoscroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+body {
+    background: url("deadend.gif");
+    background-repeat: repeat;
+    background-size: auto; 
+    background-color: #000;
+}
+
+
+.withborder {
+    background: #000 !important;
+}
+
+/* The UL used for DEAD END warning */
+.warninglist {
+    background: #000 !important;
+    padding: 0;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.warninglist li {
+    background: #000 !important;
+    padding: 20px;
+}
+
+
+
+.glitch-chroma {
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: 0.35em;
+    color: #e6e6e6;
+    position: relative;
+    display: inline-block;
+    text-shadow:
+        1px 0px 0px #ff004c,
+        -1px 0px 0px #21baff,
+        0px 1px 0px #9cff21;
+    image-rendering: pixelated;
+    animation: chroma-jitter 0.18s infinite alternate;
+}
+
+@keyframes chroma-jitter {
+    0% {
+        text-shadow:
+            1px 0px 0px #ff004c,
+            -1px 0px 0px #21baff,
+            0px 1px 0px #9cff21;
+    }
+    100% {
+        text-shadow:
+            2px -1px 0px #ff004c,
+            -2px 1px 0px #21baff,
+            1px 2px 0px #9cff21;
+    }
+}
+
+.bigtext {
+    font-size:15px;
+    letter-spacing: 0.3em;
+}
+
+/* Container for knights + box */
+.flanked-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* vertically centers knights with the text box */
+    gap: 40px;            /* spacing between knights and box */
+    margin: 60px 0;
+}
+
+/* Knight sprites */
+.knight {
+    width: 120px;         /* adjust size to preference */
+    height: auto;
+    image-rendering: pixelated;
+    opacity: 0.9;
+}
+
+/* Flip right knight */
+.knight.f-right {
+    transform: scaleX(-1);
+}
+
+#void-padding {
+    display: none;
+    width: 100%;
+    height: 8000px; /* infinite feeling */
+    background: transparent; /* shows your GIF background */
+}

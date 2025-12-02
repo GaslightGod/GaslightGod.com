@@ -9,10 +9,12 @@
 <body>
     <div id="terminal-container">
         <div id="terminal">
-            <div id="output" class="output"></div> <!-- Output Section -->
+            <div id="output" class="output"></div>
+
             <div class="input-line">
-                <span class="prompt">user@localhost:~$</span>
-                <input id="user-input" class="user-input" type="text" autofocus autocomplete="off" aria-label="Terminal Input">
+                <span id="prompt" class="prompt"></span>
+                <input id="user-input" class="user-input" type="text" 
+                       autofocus autocomplete="off" aria-label="Terminal Input">
             </div>
         </div>
     </div>

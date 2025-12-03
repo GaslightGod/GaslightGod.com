@@ -40,6 +40,18 @@
     "+ Added remote kill switch functionality",
     "+ Added online patch notes viewer (from website JSON)",
     "+ Separated Next Level and Goal Level rows for cleaner layout",
-    "+ Minor UI improvements and bug fixes"
+    "+ Minor UI improvements and bug fixes",
+    "",
+    "=== Version 1.5 Patch Notes (v1.5) ===",
+    "+ Added global F1 hotkey so settings can open even when overlay is click-through",
+    "+ Merged click-through behavior into Lock Overlay Position for safer gameplay",
+    "+ Lock Overlay Position now fully prevents accidental overlay clicks in combat",
+    "+ Settings window temporarily disables click-through so UI remains clickable",
+    "+ Closing settings properly restores click-through based on lock state",
+    "+ Added working X button to settings with correct restore behavior",
+    "+ Apply button keeps settings window open instead of closing it",
+    "+ Removed old click-through toggle and related broken references",
+    "+ Fixed issue where overlay sometimes became stuck in non-clickable mode",
+    "+ Cleaned up state handling so overlay interaction never desyncs again"
   ]
 }

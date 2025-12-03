@@ -1,190 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <audio src="sound.mp3" autoplay loop></audio>
     <meta charset="UTF-8">
     <title>？̵̵͢͟͞？̵̵͢͟͞？̵̵͢͟͞</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <audio id="scroll-sound" src="screamM.mp3" preload="auto"></audio>
-    <audio id="scroll-sound" src="screamF.mp3" preload="auto"></audio>
-    <audio id="scroll-sound" src="door.mp3" preload="auto"></audio>
 
+    <audio src="/Question/assets/audio/sound.mp3" autoplay loop></audio>
+
+
+   <audio id="scroll-sound" src="assets/audio/screamM.mp3" preload="auto"></audio>
+
+
+<audio id="scroll-sound-door" src="assets/audio/door.mp3" preload="auto"></audio>
+    <link rel="stylesheet" href="styles.css">
+    <script src="effects.js" defer></script>
 </head>
+
 <body>
+
+
+<div id="crt-warp"></div>
+<div id="flash-overlay"></div>
 <div id="void-zone"></div>
+<div id="screen-flicker"></div>
+<div id="crt-lines"></div>
+<div id="deadend-fade"></div>
+<div id="whisper-container"></div>
+
+<div id="void-bg"></div>
+
+<div id="content-wrapper">
+
 
 <div id="info">
     <span class="glitch-chroma">
-            Ｔｈｅｒｅ　ｉｓ　ｎｏ　ｐａｃｉｆｉｓｍ　ｈｅｒｅ．　
-            Ｙｏｕ　ｆｉｎｄ　ｎｏ　ｇｒａｃｅ　ｆｒｏｍ　ｔｈｅ　ｄｅｉｔｉｅｓ　ｙｏｕ　ｈａｖｅ　ｒｅｓｉｇｎｅｄ　ｔｏ．．．　
-            Ｆｉｎｄ　ｔｒｕｅ　ｐｅａｃｅ，　ｏｒ　ｐｒｏｃｅｅｄ　ｗｉｔｈ　ｃａｕｔｉｏｎ；　ｍｏｓｔ　ｄｏ　ｎｏｔ　ｒｅｔｕｒｎ．．　
-            Ｄｅａｒ　ｔｒａｖｅｌｅｒ，　ｐｅｎｅｔｒａｔｅ　ｔｈｅ　ｄｅｐｔｈｓ　ｏｆ　ｏｕｒ　ｐａｉｎ．
+        Ｔｈｅｒｅ　ｉｓ　ｎｏ　ｐａｃｉｆｉｓｍ　ｈｅｒｅ．　
+        Ｙｏｕ　ｆｉｎｄ　ｎｏ　ｇｒａｃｅ　ｆｒｏｍ　ｔｈｅ　ｄｅｉｔｉｅｓ　ｙｏｕ　ｈａｖｅ　ｒｅｓｉｇｎｅｄ．．．　
+        Ｆｉｎｄ　ｔｒｕｅ　ｐｅａｃｅ，　ｏｒ　ｐｒｏｃｅｅｄ　ｗｉｔｈ　ｃａｕｔｉｏｎ；　ｍｏｓｔ　ｄｏ　ｎｏｔ　ｒｅｔｕｒｎ．．　
+        Ｄｅａｒ　ｔｒａｖｅｌｅｒ，　ｐｅｎｅｔｒａｔｅ　ｔｈｅ　ｄｅｐｔｈｓ　ｏｆ　ｏｕｒ　ｐａｉｎ．
     </span>
 </div>
 
 
- <div class="flanked-box">
-    <img src="knight.gif" class="knight f-left" />
-    
-    <div class="withborder">
-        ｓｏｎｓ　ｏｆ　ｔｈｅ　ｆｏｒｔｕｎａｔｅ．
-        <br><br>
+
+<div class="flanked-box">
+    <img src="/Question/assets/img/knight.gif" class="knight f-left" />
+
+    <div class="withborder bigtext">
+        ｓｏｎｓ　ｏｆ　ｔｈｅ　ｆｏｒｔｕｎａｔｅ．<br><br>
         Ｔｕｒｎ　ｂａｃｋ　ｗｈｉｌｅ　ｔｈｅｒｅ　ｉｓ　ｓｔｉｌｌ　ｔｉｍｅ．
     </div>
 
-    <img src="knight.gif" class="knight f-right" />
+    <img src="/Question/assets/img/knight.gif" class="knight f-right" />
 </div>
 
 
-    <div class="space"></div>
-
-
- <img src="With_Wilbells_will_why_waste_whit_worrying.gif" class="centerwarning">
-  <div class="space"></div>
-      <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-
-    <ul class="withborder warninglist">
-        
-        <li>Ｙｏｕ　ｗｅｒｅ　ｓｅｅｎ　ｅｎｔｅｒｉｎｇ．．．</li>
-    </ul>
-<div class="space"></div>
 <div class="space"></div>
 
+<img src="/Question/assets/img/With_Wilbells_will_why_waste_whit_worrying.gif" class="centerwarning">
 
-<img src="chosen.gif" class="centerwarning">
-<div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
 
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    
+<div class="withborder bigtext">
+    Ｙｏｕ　ｗｅｒｅ　ｓｅｅｎ　ｅｎｔｅｒｉｎｇ．．．
+</div>
 
+<div class="space"></div><div class="space"></div>
 
+<img src="/Question/assets/img/seen.jpg" class="centerwarning">
 
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
 
-    <div class="withborder bigtext">
-        Ｙｏｕ　ｈａｖｅ　ｎｏ　ｃｈａｎｃｅ　ｏｆ　ｓｕｒｖｉｖｉｎｇ　ｔｈｉｓ　ｐｌａｃｅ．
-    </div>
-<div class="space"></div>
-<img src="bodybreaks.gif" class="centerwarning">
-<img src="MYMIND.gif" class="centerwarning">
-<img src="redman.gif" class="centerwarning">
-
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-
-
-
-    <div class="withborder ">
-        Ｗｈｉｓｐｅｒｓ　ｏｆ　ｔｈｅ　ｂｒｅａｋｉｎｇ　ｍｉｎｄ ｌａｍｅｎｔ
-        <br><br>
-        ｙｏｕｒ　ｇｏｄｓ　ｄｏ　ｂｌｅｅｄ．
-    </div>
-<div class="space"></div>
-
-        <img src="demon.gif" class="centerwarning">
-    <div class="footer">
-    </div>
-
-
-        <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="withborder bigtext">
-        Ｔｈｅ　ｄｏｏｒ　ｉｓ　ｃｌｏｓｅｄ．
-        <br><br>
-        Ｙｏｕ　ｍｕｓｔ　ｃｏｎｔｉｎｕｅ　ｆｏｒｗａｒｄ．
-        
-        
-    </div>
-    <div class="space"></div>
-            <img src="comewithme.jpg" class="centerwarning">
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
-    <div class="space"></div>
 
 
 <div class="withborder bigtext">
-    ｔｈｅ　ｖｏｉｄ　ｈａｓ　ａｍｂｉｔｉｏｎｓ．．．
+    Ｙｏｕ　ｈａｖｅ　ｎｏ　ｃｈａｎｃｅ　ｏｆ　ｓｕｒｖｉｖｉｎｇ　ｔｈｉｓ　ｐｌａｃｅ．
 </div>
 
+<div class="space"></div>
+
+<img src="/Question/assets/img/bodybreaks.gif" class="centerwarning">
+<img src="/Question/assets/img/MYMIND.gif" class="centerwarning">
+<img src="/Question/assets/img/redman.gif" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+
+
+<div class="withborder bigtext">
+    Ｗｈｉｓｐｅｒｓ　ｏｆ　ｔｈｅ　ｂｒｅａｋｉｎｇ　ｍｉｎｄ ｌａｍｅｎｔ<br><br>
+    ｙｏｕｒ　ｇｏｄｓ　ｄｏ　ｂｌｅｅｄ．
+</div>
+
+<div class="space"></div>
+
+<img src="/Question/assets/img/sloth.jpg" class="centerwarning">
+
+<div class="footer"></div>
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+
+<div class="withborder bigtext">
+    Ｔｈｅ　ｄｏｏｒ　ｉｓ　ｃｌｏｓｅｄ．<br><br>
+    Ｙｏｕ　ｍｕｓｔ　ｃｏｎｔｉｎｕｅ　ｆｏｒｗａｒｄ．
+</div>
+
+<div class="space"></div>
+
+<img src="/Question/assets/img/comewithme.jpg" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+
+
+<span class="withborder bigtext fight-text"
+      data-base="ｔｈｅ　ｖｏｉｄ　ｈａｓ　ａｍｂｉｔｉｏｎｓ．．．"
+      data-glitch="ｉｔ　ｗａｎｔｓ　ｔｏ　ｋｅｅｐ　ｙｏｕ．">
+</span>
+
+<div class="space"></div>
+
+<img src="/Question/assets/img/joined.jpg" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
 
 
 
+<div class="withborder bigtext">
+    ｗｈｙ　ｄｏ　ｙｏｕ　ｓｔｒｕｇｇｌｅ　ｓｏ　ｄｅｓｐｅｒａｔｅｌｙ？
+<br>
+</div>
+
+<div class="space"></div>
+
+<img src="/Question/assets/img/trudge.jpg" class="centerwarning">
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+
+
+<div class="withborder bigtext">
+    ｗｈａｔ　ｋｅｅｐｓ　ｙｏｕ　ｐｕｓｈｉｎｇ　ｆｏｒｗａｒｄ．．．　
+ｗｈｅｎ　ｉ　ｋｎｏｗ　ｙｏｕ’ｒｅ　ｔｉｒｅｄ？
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/home.jpg" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div>
 
 
 
+<div class="space"></div>
+<div class="withborder bigtext">
+    ｂｅ　ｗａｒｙ．．．　ｉｔ　ｗａｔｃｈｅｓ　ｗｈｅｎ　ｙｏｕ　ｆａｌｔｅｒ．
+　ｉｔ　ｗｉｌｌ　ｎｏｔ　ｐｅｒｍｉｔ　ｒｅｓｔ．
+
+<br>
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/nearmore.jpg" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space">
+
+
+ <span class="withborder bigtext fight-text"
+      data-base="ｔｈｅ　ｖｏｉｃｅ　ｔｈａｔ　ｗａｌｋｓ　ｂｅｓｉｄｅ　ｙｏｕ．"
+      data-glitch="ｙｏｕ ｃａｎｎｏｔ　ｅｓｃａｐｅ　ｉｔ．">
+</span>
+<div class="space"></div>
+<img src="/Question/assets/img/friend.png" class="centerwarning"> 
+</div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="withborder bigtext glitch-chroma">
+    Ｉｔ　ｈａｓ　ｔａｋｅｎ　ｍａｎｙ　ｍｏｒｅ，　   
+  ｎｏｎｅ　ｃｏｍｅ　ｂａｃｋ　ｔｈｅ　ｗａｙ　ｔｈｅｙ　ｃａｍｅ．
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/tree.jpg" class="centerwarning">
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div>
+
+
+<div class="withborder bigtext">
+    Ｗｈｙ　ｍｕｓｔ　ｙｏｕ　ｆｏｒｓａｋｅ　ｙｏｕｒｓｅｌｆ，　ｔｒａｖｅｌｅｒ？
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/stand.jpg" class="centerwarning">
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div>
 
 
 
+<div class="withborder bigtext">
+    ｈａｖｅ　ｙｏｕｒ　ｓｉｎｓ　ｂｅｇｕｎ　ｔｏ　ｅａｔ　ａｔ　ｙｏｕ？
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/sins.jpg" class="centerwarning">
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div>
 
 
+<div class="glitch-void" data-text="ｙｏｕ　ｃａｎ　ｒｅｓｔ．．．　ｔｈｅ　ｖｏｉｄ　ｗｉｌｌ　ｈｏｌｄ　ｙｏｕ">
+    ｙｏｕ　ｃａｎ　ｒｅｓｔ．．．　ｔｈｅ　ｖｏｉｄ　ｗｉｌｌ　ｈｏｌｄ　ｙｏｕ
+</div>
+
+<div class="space"></div>
+<img src="/Question/assets/img/quiet.jpg" class="centerwarning">
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div>
 
 
+<div class="withborder bigtext">
+    ｙｏｕ　ｈａｖｅ　ｃｏｍｅ　ｔｏｏ　ｆａｒ．．．　ｔｈｅ　ｖｏｉｄ　ｃｌａｉｍｓ　ｗｈａｔ　ｒｅｍａｉｎｓ
+</div>
+<div class="space"></div>
+<img src="/Question/assets/img/oracle.jpg" class="centerwarning">
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div><div class="space"></div><div class="space"></div>
 
 
+<div class="withborder bigtext">
+    ｙｏｕ　ｗｅｒｅ　ｗａｒｎｅｄ．．．　ｏｕｒ　ｐａｉｎ　ｉｓ　ｎｏｗ　ｙｏｕｒｓ
+
+</div>
+<div class="space"></div>
+
+<div class="space"></div><div class="space"></div><div class="space"></div><div class="space"></div>
+<div class="space"></div></div>
+</div> 
 
 
-
-
-
-    
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    const sound = document.getElementById("scroll-sound");
-    let played = false; 
-
-    window.addEventListener("scroll", () => {
-        const triggerPoint = 2700; 
-        if (!played && window.scrollY > triggerPoint) {
-            sound.volume = 1.0;  
-            sound.play();
-            played = true;     
-        }
-    });
-
-});
-</script>
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    let lockPoint = 6130; 
-    let locked = false;
-
-    window.addEventListener("scroll", () => {
-        if (!locked && window.scrollY > lockPoint) {
-            locked = true;
-        }
-
-        if (locked && window.scrollY < lockPoint) {
-            window.scrollTo(0, lockPoint);
-        }
-    });
-
-});
-</script>
 
 </body>
 </html>

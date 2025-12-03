@@ -1,4 +1,9 @@
-/* Base page style */
+#content-wrapper {
+    position: relative;
+    z-index: 100;
+}
+
+
 body {
     background: #000;
     color: #c1b492;
@@ -9,114 +14,32 @@ body {
     padding: 0;
 }
 
-/* scrolling info bar */
-#info {
-    position: relative;
-    width: 780px;
-    height: 48px;
-    margin: 40px auto;
-    background: #000;
-    padding: 16px;
-    border: 1px solid #00799e;
-    overflow: hidden;
-    line-height: 1.4;
-    white-space: normal; /* allow wrapping */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-#info span {
-    position: absolute;
-    white-space: pre;
-    animation: scroll 22s linear infinite;
-}
-
-#info:hover span {
-    animation-play-state: paused;
-}
-
-@keyframes scroll {
-    0% { left: 820px; }
-    100% { left: -2400px; }
-}
-
-/* blinking glyphs */
-@keyframes blink {
-    to { visibility: hidden; }
-}
-
-.blink {
-    animation: blink 1200ms steps(2, start) infinite;
-}
-
-/* spacing */
 .space { height: 120px; }
 
-/* warning images */
-.warning {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.75;
-}
-
-.w-left {
-    top: 100px;
-    left: 80px;
-}
-
-.w-right {
-    top: 100px;
-    right: 80px;
-}
-
-/* hover reveal fade */
-.reveal {
-    opacity: 0.6;
-    transition: opacity 1s ease-in-out;
-}
-
-.reveal:hover {
-    opacity: 1.0;
-}
-
-/* boxed borders */
-.withborder {
-    border: 1px solid #00799e;
-    display: inline-block;
-    padding: 12px 18px;
-    margin-top: 40px;
-}
-
-/* list reset */
-.nolist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
 
 #info {
+    position: relative;
+    width: 800px;
+    height: 30px;
+    margin: 40px auto 0;
+    padding: 8px 0;
+
     background: #000;
     color: #c1b492;
     border: 1px solid #00799e;
-    width: 800px;                
-    height: 30px;
-    margin: 40px auto 0 auto;
+    box-shadow: 0 5px 10px #000;
+
     overflow: hidden;
-    box-shadow: 0px 5px 10px #000;
-    padding: 8px 0;
-    position: relative;
+    white-space: nowrap;
     line-height: 30px;
     font-size: 14px;
-    letter-spacing: 0.18em;      
-    white-space: nowrap;         
+    letter-spacing: 0.18em;
 }
 
 #info span {
     display: inline-block;
     white-space: nowrap;
-    padding-left: 100%;           /* ensures smooth entry from right */
+    padding-left: 100%;
     animation: infoscroll 32s linear infinite;
 }
 
@@ -130,29 +53,53 @@ body {
 }
 
 
-body {
-    background: url("deadend.gif");
-    background-repeat: repeat;
-    background-size: auto; 
-    background-color: #000;
+
+@keyframes blink {
+    to { visibility: hidden; }
 }
 
+.blink {
+    animation: blink 1200ms steps(2, start) infinite;
+}
+
+
+
+.warning {
+    position: absolute;
+    opacity: 0.75;
+    z-index: -1;
+}
+
+.w-left  { top: 100px; left: 80px; }
+.w-right { top: 100px; right: 80px; }
+
+.reveal { opacity: 0.6; transition: opacity 1s ease-in-out; }
+.reveal:hover { opacity: 1; }
 
 .withborder {
     background: #000 !important;
+    border: 1px solid #00799e;
+    display: inline-block;
+    padding: 12px 18px;
+    margin-top: 40px;
 }
 
-/* The UL used for DEAD END warning */
 .warninglist {
     background: #000 !important;
-    padding: 0;
     width: 800px;
     margin: 0 auto;
+    padding: 0;
 }
 
 .warninglist li {
     background: #000 !important;
     padding: 20px;
+}
+
+.nolist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -164,52 +111,52 @@ body {
     color: #e6e6e6;
     position: relative;
     display: inline-block;
-    text-shadow:
-        1px 0px 0px #ff004c,
-        -1px 0px 0px #21baff,
-        0px 1px 0px #9cff21;
     image-rendering: pixelated;
+
+    text-shadow:
+        1px 0   0 #ff004c,
+       -1px 0   0 #21baff,
+        0   1px 0 #9cff21;
+
     animation: chroma-jitter 0.18s infinite alternate;
 }
 
 @keyframes chroma-jitter {
     0% {
         text-shadow:
-            1px 0px 0px #ff004c,
-            -1px 0px 0px #21baff,
-            0px 1px 0px #9cff21;
+            1px 0   0 #ff004c,
+           -1px 0   0 #21baff,
+            0   1px 0 #9cff21;
     }
     100% {
         text-shadow:
-            2px -1px 0px #ff004c,
-            -2px 1px 0px #21baff,
-            1px 2px 0px #9cff21;
+            2px -1px 0 #ff004c,
+           -2px  1px 0 #21baff,
+            1px  2px 0 #9cff21;
     }
 }
 
 .bigtext {
-    font-size:15px;
+    font-size: 15px;
     letter-spacing: 0.3em;
 }
 
-/* Container for knights + box */
+
+
 .flanked-box {
     display: flex;
     justify-content: center;
-    align-items: center;  /* vertically centers knights with the text box */
-    gap: 40px;            /* spacing between knights and box */
+    align-items: center;
+    gap: 40px;
     margin: 60px 0;
 }
 
-/* Knight sprites */
 .knight {
-    width: 120px;         /* adjust size to preference */
-    height: auto;
+    width: 120px;
     image-rendering: pixelated;
     opacity: 0.9;
 }
 
-/* Flip right knight */
 .knight.f-right {
     transform: scaleX(-1);
 }
@@ -217,6 +164,246 @@ body {
 #void-padding {
     display: none;
     width: 100%;
-    height: 8000px; /* infinite feeling */
-    background: transparent; /* shows your GIF background */
+    height: 8000px;
+    background: transparent;
+}
+
+
+
+#flash-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    opacity: 0;
+
+    background-size: cover;
+    background-position: center;
+    z-index: 999999;
+}
+
+@keyframes flashImage {
+    0% { opacity: 0; }
+   10% { opacity: 1; }
+   50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* fight-text dynamic swap */
+.fight-text::before { content: attr(data-base); transition: opacity 60ms; }
+.fight-text.glitching::before { content: attr(data-glitch); }
+
+
+
+
+#screen-flicker {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.55);
+    mix-blend-mode: screen;
+    opacity: 0;
+    z-index: 99998;
+}
+
+#screen-flicker.flicker-active {
+    animation: analogFlicker 0.3s steps(2, start);
+}
+
+@keyframes analogFlicker {
+     0% { opacity: 0; }
+     5% { opacity: 0.35; }
+     6% { opacity: 0; }
+     7% { opacity: 0.42; }
+     8% { opacity: 0; }
+    10% { opacity: 0.30; }
+    11% { opacity: 0; }
+   100% { opacity: 0; }
+}
+
+
+
+#crt-lines {
+    pointer-events: none;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    width: 100vw;
+    height: 300vh;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.12) 2px,
+        rgba(0,0,0,0.12) 2px,
+        rgba(0,0,0,0.12) 4px
+    );
+
+    mix-blend-mode: screen;
+    filter: blur(0.4px);
+    z-index: 99997;
+    animation: crtSlide 9s linear infinite;
+}
+
+
+#crt-warp {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    opacity: 0;
+    mix-blend-mode: lighten;
+    z-index: 99996;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,0,255,0.15),
+            rgba(0,255,255,0.10) 2px,
+            rgba(0,0,0,0.05) 4px
+        ),
+        rgba(0,0,0,0.1);
+}
+
+#crt-warp.warping { opacity: 1 !important; }
+
+
+@keyframes crtWarpEffect {
+    0%   { transform: translateX(0) skewX(0deg);   opacity: 0.20; }
+    10%  { transform: translateX(-12px) skewX(8deg) scaleY(1.02); opacity: 0.55; }
+    20%  { transform: translateX(16px) skewX(-7deg) scaleY(0.98); opacity: 0.75; }
+    30%  { transform: translateX(-10px) skewX(6deg); opacity: 0.95; }
+    40%  { transform: translateX(8px) skewX(-5deg); opacity: 0.7; }
+    50%  { transform: translateX(-28px) skewX(14deg) scaleY(0.95); opacity: 1; }
+    60%  { transform: translateX(12px) skewX(-8deg); opacity: 0.6; }
+    70%  { transform: translateX(-6px) skewX(3deg); opacity: 0.4; }
+    80%  { transform: translateX(5px) skewX(-2deg); opacity: 0.3; }
+    100% { transform: translateX(0) skewX(0deg);   opacity: 0; }
+}
+
+
+#deadend-fade {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+background: url("/Question/assets/img/deadend.gif") repeat;
+    background-position: center center;
+    background-size: auto;
+
+    opacity: 0;
+    transition: opacity 0.05s linear;
+    z-index: -1;
+}
+
+
+
+#void-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: url("/Question/assets/img/deadend.gif") center center / cover no-repeat;
+
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -9998;
+    transition: opacity 4s linear;
+}
+
+
+
+#whisper-container {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -9980;
+}
+
+.whisper {
+    position: absolute;
+    font-family: monospace;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.07);
+
+    opacity: 0;
+    transition: opacity 2s linear;
+
+    text-shadow:
+        1px 0   2px rgba(255,0,0,0.12),
+       -1px 0   2px rgba(0,200,255,0.12);
+}
+
+
+
+.glitch-void {
+    position: relative;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: 0.35em;
+
+    color: #ff4444;
+    animation: gv-shake 90ms infinite linear;
+}
+
+.glitch-void::before,
+.glitch-void::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.85;
+    font-family: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    mix-blend-mode: screen;
+}
+
+.glitch-void::before {
+    color: #22ffff;
+    animation: gv-glitch-1 150ms infinite linear alternate-reverse;
+}
+
+.glitch-void::after {
+    color: #ff22ff;
+    animation: gv-glitch-2 130ms infinite linear alternate;
+}
+
+
+@keyframes gv-shake {
+    0%   { transform: translate(0,0); }
+    25%  { transform: translate(1px,-1px); }
+    50%  { transform: translate(-1px,1px); }
+    75%  { transform: translate(2px,-2px); }
+    100% { transform: translate(0,0); }
+}
+
+
+@keyframes gv-glitch-1 {
+    0%   { transform: translate(-2px,0);  opacity: 0.6; }
+    50%  { transform: translate(2px,-1px); opacity: 0.9; }
+    100% { transform: translate(-1px,1px); opacity: 0.4; }
+}
+
+
+@keyframes gv-glitch-2 {
+    0%   { transform: translate(2px,1px);   color: #44ff44; }
+    33%  { transform: translate(-2px,-2px); color: #ff4444; }
+    66%  { transform: translate(3px,2px);   color: #22ffff; }
+    100% { transform: translate(-4px,0px);  color: #ff22ff; }
 }

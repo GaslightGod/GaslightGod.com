@@ -52,6 +52,19 @@
     "+ Apply button keeps settings window open instead of closing it",
     "+ Removed old click-through toggle and related broken references",
     "+ Fixed issue where overlay sometimes became stuck in non-clickable mode",
-    "+ Cleaned up state handling so overlay interaction never desyncs again"
+    "+ Cleaned up state handling so overlay interaction never desyncs again",
+    "",
+        "=== Version 1.6 Patch Notes (v1.6) ===",
+    "+ Added real-time digital clock display to overlay",
+    "+ Added 'Show Clock' toggle in Settings → General",
+    "+ Added persistent settings file (settings.json)",
+    "+ Overlay now restores text color, scale, goal level, font, hunger icon size, EXP mode, toggles, and clock visibility on launch",
+    "+ Overlay now restores last saved X/Y screen position",
+    "+ Added automatic settings saving when Apply is pressed",
+    "+ Added full auto-updater system with ZIP downloading, extraction, and auto-restart",
+    "+ Added 'Update Now' button in Settings → Info",
+    "+ Improved click-through behavior tied to 'Lock Overlay Position'",
+    "+ Fixed click-through disabling F1 until settings were opened",
+    "+ Improved settings window close handling"
   ]
 }

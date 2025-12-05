@@ -1,12 +1,9 @@
 {
-    "title": "DF Overlay Patch Notes",
-    "version": "1.7",
-    "notes": [
-        "Added full automatic updater support for future releases.",
-        "Included updater.exe in release package.",
-        "Fixed UI scaling issues on clock and updated its visibility toggle.",
-        "Improved EXP and AVG calculations for more stable readings.",
-        "Optimized hunger detection accuracy and template matching.",
-        "General stability improvements and minor bug fixes."
-    ]
+  "title": "DF Overlay Patch Notes",
+  "version": "1.71",
+  "notes": [
+    "Fixed an issue where the on-screen clock did not use the selected text color.",
+    "Clock now properly updates color and scaling when appearance settings are changed.",
+    "Improved clock toggle behavior in the settings menu."
+  ]
 }

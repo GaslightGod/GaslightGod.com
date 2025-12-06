@@ -1,5 +1,5 @@
 {
-  "version": "1.72",
+  "version": "1.73",
   "title": "EXP Tracker Update",
   "notes": [
     "Fixed inaccurate EXP/hr caused by long polling intervals. Replaced 8-second polling with a 1-second update listener that reacts instantly to EXP changes.",

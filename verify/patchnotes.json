@@ -1,11 +1,12 @@
 {
-  "title": "DF Overlay Patch Notes",
-  "version": "1.71",
+  "version": "1.72",
+  "title": "EXP Tracker Update",
   "notes": [
-    "Fixed an issue where the on-screen clock did not use the selected text color.",
-    "Clock now properly updates color and scaling when appearance settings are changed.",
-    "Added an 'Update' button to the launch screen for easier access to the latest version.",
-    "Added updater functionality to check for new versions while the application is running.",
-    "Fixed various bugs to improve overall stability and performance."
+    "Fixed inaccurate EXP/hr caused by long polling intervals. Replaced 8-second polling with a 1-second update listener that reacts instantly to EXP changes.",
+    "Improved EXP change detection. The tracker now records the exact moment EXP updates instead of approximating based on poll timing.",
+    "Removed the old fallback timing logic that forced server_dt to be at least 5 seconds. EXP/hr now uses the true server update timing.",
+    "Cleaned up reset behavior. EXP/hr, AVG, and ETA only reset when EXP decreases or when 90 seconds pass without gain.",
+    "Fixed Goal ETA desync. Goal ETA now always uses the latest EXP/hr rate and updates smoothly without freezing.",
+    "Overall EXP rate accuracy significantly improved due to real tick-based detection rather than timed sampling."
   ]
 }

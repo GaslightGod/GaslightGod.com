@@ -1,5 +1,5 @@
 {
   "latest_version": "1.73",
-  "download_url": "https://gaslightgod.com/downloads/DF_Overlay.zip",
-  "message": "v1.73 — PLEASE DOWNLOAD NEW UPDATER FROM https://gaslightgod.com/downloads/updater.exe EXTRACT TO THE SAME FOLDER YOU HAVE DF_Overlay.exe THIS WILL ALLOW FOR AUTO UPDATES THE OLD ONE IS BROKEN CHECK FORUM THREAD IF CONFUSED || Major EXP accuracy update. Added 1s live polling, instant EXP-change detection, smoother ETA calculations, and improved EXP/hr stability."
+  "download_url": "https://github.com/YourName/DF_Overlay/releases/download/v1.73/DF_Overlay.zip",
+  "message": "v1.73 — PLEASE DOWNLOAD NEW UPDATER FROM https://github.com/YourName/DF_Overlay/releases/download/v1.73/updater.exe EXTRACT TO THE SAME FOLDER YOU HAVE DF_Overlay.exe THIS WILL ALLOW FOR AUTO UPDATES THE OLD ONE IS BROKEN CHECK FORUM THREAD IF CONFUSED || Major EXP accuracy update. Added 1s live polling, instant EXP-change detection, smoother ETA calculations, and improved EXP/hr stability."
 }

@@ -1,12 +1,12 @@
 {
-  "version": "1.73",
+  "version": "1.74",
   "title": "EXP Tracker Update",
   "notes": [
-    "Fixed inaccurate EXP/hr caused by long polling intervals. Replaced 8-second polling with a 1-second update listener that reacts instantly to EXP changes.",
-    "Improved EXP change detection. The tracker now records the exact moment EXP updates instead of approximating based on poll timing.",
-    "Removed the old fallback timing logic that forced server_dt to be at least 5 seconds. EXP/hr now uses the true server update timing.",
-    "Cleaned up reset behavior. EXP/hr, AVG, and ETA only reset when EXP decreases or when 90 seconds pass without gain.",
-    "Fixed Goal ETA desync. Goal ETA now always uses the latest EXP/hr rate and updates smoothly without freezing.",
-    "Overall EXP rate accuracy significantly improved due to real tick-based detection rather than timed sampling."
+    "• Improved level and experience tracking",
+"• Fixed incorrect timers caused by overflow experience",
+"• Corrected next and goal level time estimates",
+"• Debug window no longer causes errors when closed",
+"• Smoothed average experience per hour calculations",
+"• Added internal support for automatic version updates and build automation"
   ]
 }

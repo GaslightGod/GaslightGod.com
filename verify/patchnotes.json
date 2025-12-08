@@ -1,12 +1,15 @@
 {
-  "version": "1.75",
+  "version": "1.76",
   "title": "EXP Tracker Update",
   "notes": [
-    "• Improved level and experience tracking",
-"• Fixed incorrect timers caused by overflow experience",
-"• Corrected next and goal level time estimates",
-"• Debug window no longer causes errors when closed",
-"• Smoothed average experience per hour calculations",
-"• Added internal support for automatic version updates and build automation"
+    "• Fixed rare EXP/hr spike issue caused by timing inconsistencies",
+    "• Corrected next and goal level timers to prevent them from showing 00:00:00",
+    "• Improved handling of overflow and spillover experience during level ups",
+    "• Smoothed average EXP/hr calculations and added internal history limits",
+    "• Debug window now closes cleanly without throwing errors",
+    "• Improved PID switching reliability and reset behavior",
+    "• General backend stability improvements and safer multithreading",
+    "• Added PID switching mid session without having to relaunch client.",
+    "• Added GUI position permenance (remains where you place it when relaunching.)"
   ]
 }

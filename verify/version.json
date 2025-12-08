@@ -1,5 +1,5 @@
 {
-  "latest_version": "1.75",
-  "download_url": "https://github.com/GaslightGod/DF_Overlay/releases/download/v1.74/DF_Overlay.zip",
+  "latest_version": "1.76",
+  "download_url": "https://github.com/GaslightGod/DF_Overlay/releases/download/v1.76/DF_Overlay_1.76.exe",
   "message": "Fixed longterm memory overflow issues, Fixed race condition issues causing wild avg exp amounts,  ."
 }

@@ -1,5 +1,5 @@
 {
-  "latest_version": "1.76",
-  "download_url": "https://github.com/GaslightGod/DF_Overlay/releases/download/v1.76/DF_Overlay_1.76.exe",
-  "message": "Fixed longterm memory overflow issues, Fixed race condition issues causing wild avg exp amounts,  ."
+  "latest_version": "1.77",
+  "download_url": "https://github.com/GaslightGod/DF_Overlay/releases/download/v1.77/DF_Overlay_1.77.exe",
+  "message": "Added new Leaderboards window with Clan Weekly TS and Player Weekly TS support, improved DFProfiler parsing, kept core overlay systems untouched."
 }

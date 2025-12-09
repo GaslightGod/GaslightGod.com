@@ -1,15 +1,13 @@
 {
-  "version": "1.76",
-  "title": "EXP Tracker Update",
+  "version": "1.77",
+  "title": "CTS / TS Update",
   "notes": [
-    "• Fixed rare EXP/hr spike issue caused by timing inconsistencies",
-    "• Corrected next and goal level timers to prevent them from showing 00:00:00",
-    "• Improved handling of overflow and spillover experience during level ups",
-    "• Smoothed average EXP/hr calculations and added internal history limits",
-    "• Debug window now closes cleanly without throwing errors",
-    "• Improved PID switching reliability and reset behavior",
-    "• General backend stability improvements and safer multithreading",
-    "• Added PID switching mid session without having to relaunch client.",
-    "• Added GUI position permenance (remains where you place it when relaunching.)"
-  ]
+    "• Added new multi-tab Leaderboards window to Settings",
+    "• Added support for Top 25 Clan Weekly TS and Player Weekly TS",
+    "• Added “View Leaderboards” button under Settings → Info tab",
+    "• Added ctrl + f5 to close overlay",
+    "• Removed annoying update window at start",
+    "• Removed update button",
+    "• Added force close in settings"
+  ] 
 }
